@@ -9,10 +9,11 @@
   --background: #e5e5e5;
   --content-color: #f5f4fa;
   --mail-color: rgba(255, 255, 255, 0.6);
+  --border-color: #ececec;
+  --border-card-list: #eeeeee;
 
   --indent: 30px;
   --items: 4;
-  --inner: 3;
 }
 
 /* Body */
@@ -53,6 +54,17 @@ address {
   font-style: normal;
 }
 
+.card-set {
+  display: flex;
+  flex-wrap: wrap;
+  margin: calc(-1 * var(--indent) / 2);
+}
+
+.card-set-item {
+  flex-basis: calc((100% - var(--indent) * var(--items)) / var(--items));
+  margin: calc(var(--indent) / 2);
+}
+
 /* Header */
 .section {
   padding-top: 47px;
@@ -78,6 +90,7 @@ address {
 .main-nav {
   display: flex;
   align-items: center;
+  border-bottom: 1px solid var(--border-color);
 }
 
 /* Логотип */
@@ -170,16 +183,19 @@ address {
 }
 
 /* Main */
-/* Об организации */
+/* Кнопка */
 
-.first-section {
+.hero-section {
   text-align: center;
   background-color: var(--background-color);
 }
 
-.section-caption {
+.hero-caption {
   margin-bottom: 35px;
+  margin-left: auto;
+  margin-right: auto;
   padding-top: 200px;
+  width: 696px;
 
   color: var(--bgc-color);
   font-weight: 900;
@@ -190,7 +206,7 @@ address {
   text-transform: uppercase;
 }
 
-.section-button {
+.hero-button {
   padding: 10px 32px;
   margin-bottom: 200px;
   margin-left: auto;
@@ -208,8 +224,8 @@ address {
   border: none;
 }
 
-.section-button:hover,
-.section-button:focus {
+.hero-button:hover,
+.hero-button:focus {
   color: var(--accent-text-color);
   background-color: var(--button-color);
   cursor: pointer;
@@ -228,19 +244,6 @@ address {
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
-}
-
-.aside-list {
-  display: flex;
-}
-
-.aside-list-inner {
-  flex-basis: calc((100% - var(--indent) * var(--items)) / var(--items));
-  margin: calc(var(--indent) / 2);
-}
-
-.aside .sections {
-  background-color: var(--background);
 }
 
 .aside-title {
@@ -267,13 +270,8 @@ address {
   text-align: center;
 }
 
-.section-secondary-list {
-  display: flex;
-}
-
-.section-secondary-item {
-  flex-basis: calc((100% - var(--indent) * var(--inner)) / var(--inner));
-  margin: calc(var(--indent) / 2);
+.section-secondary {
+  --items: 3;
 }
 
 /* Команда */
@@ -283,12 +281,10 @@ address {
 }
 
 .content-list {
-  display: flex;
-}
-
-.content-list-item {
-  flex-basis: calc((100% - var(--indent) * var(--items)) / var(--items));
-  margin: calc(var(--indent) / 2);
+  background: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0 0 4px 4px;
 }
 
 .content-img {
@@ -305,6 +301,8 @@ address {
 }
 
 .content-text {
+  margin-bottom: 30px;
+
   font-size: 16px;
   line-height: 1.19;
   text-align: center;
@@ -318,17 +316,17 @@ address {
   background-color: var(--background-color);
 }
 
-.box-link{
-  display: block;
-  margin-top: 60px;
-  margin-top: 10px;
-}
-
 .box-logo {
   color: var(--bgc-color);
 }
 
+.box-list {
+  margin-top: 20px;
+}
 .box-contact {
+  display: block;
+  margin-bottom: 9px;
+
   color: var(--bgc-color);
   line-height: 1.71;
   text-decoration: none;
@@ -336,6 +334,8 @@ address {
 }
 
 .box-mail {
+  display: block;
+  margin-bottom: 9px;
   color: var(--mail-color);
   line-height: 1.71;
   text-decoration: none;
@@ -357,6 +357,23 @@ address {
 }
 
 /* Портфолио */
+
+.portfolio {
+  --items: 3;
+}
+
+.filter {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.filter-list {
+  margin-right: 8px;
+}
+.filter-list:last-child {
+  margin-right: 0;
+}
 
 .filter .active {
   color: var(--bgc-color);
@@ -388,7 +405,16 @@ address {
   cursor: pointer;
 }
 
+.card-list {
+  border-bottom: 1px solid var(--border-card-list);
+}
+
+.card-container {
+  margin: 20px 24px;
+}
 .card-title {
+  margin-bottom: 4px;
+
   color: var(--title-text-color);
   font-size: 18px;
   line-height: 2;
