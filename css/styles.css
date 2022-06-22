@@ -71,6 +71,10 @@ address {
   padding-bottom: 94px;
 }
 
+.header{
+  border-bottom: 1px solid var(--border-color);
+}
+
 .container {
   width: 1200px;
   margin-left: auto;
@@ -82,18 +86,17 @@ address {
 .main-nav {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid var(--border-color);
-}
+  }
 
 /* Логотип */
 
 .header-nav {
   display: flex;
+  align-items: center;
+  margin-right: auto;
 }
 
 .nav-link {
-  padding-top: 24px;
-  padding-bottom: 25px;
   margin-right: 92px;
 
   color: var(--accent-text-color);
@@ -148,11 +151,10 @@ address {
 
 .auth-nav {
   display: flex;
-  margin-left: auto;
 }
 
-.auth-nav .item + .item {
-  margin-left: 50px;
+.auth-nav .item:first-child {
+  margin-right: 50px;
 }
 .auth-nav .link {
   display: block;
@@ -178,7 +180,9 @@ address {
 /* Кнопка */
 
 .hero-section {
+  padding: 200px 0;
   text-align: center;
+
   background-color: var(--background-color);
 }
 
@@ -186,7 +190,6 @@ address {
   margin-bottom: 35px;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 200px;
   width: 696px;
 
   color: var(--bgc-color);
@@ -200,7 +203,6 @@ address {
 
 .hero-button {
   padding: 10px 32px;
-  margin-bottom: 200px;
   margin-left: auto;
   margin-right: auto;
 
@@ -214,6 +216,8 @@ address {
   text-align: center;
   letter-spacing: 0.06em;
   border: none;
+  border-radius: 4px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
 .hero-button:hover,
@@ -263,6 +267,7 @@ address {
 }
 
 .section-secondary {
+  padding-top: 0;
   --items: 3;
 }
 
@@ -279,12 +284,13 @@ address {
   border-radius: 0 0 4px 4px;
 }
 
-.content-img {
-  margin-bottom: 30px;
+.card-team{
+  padding: 30px 0;
 }
 
 .content-title {
   margin-bottom: 10px;
+
   color: var(--title-text-color);
   font-weight: 500;
   font-size: 16px;
@@ -293,9 +299,7 @@ address {
 }
 
 .content-text {
-  margin-bottom: 30px;
-
-  font-size: 16px;
+   font-size: 16px;
   line-height: 1.19;
   text-align: center;
 }
@@ -308,27 +312,30 @@ address {
   background-color: var(--background-color);
 }
 
+.box-link {
+  display: block;
+  margin-right: 0;
+  margin-bottom: 20px;
+}
+
 .box-logo {
   color: var(--bgc-color);
 }
 
-.box-list {
-  margin-top: 20px;
-}
-.box-contact {
-  display: block;
-  margin-bottom: 9px;
 
-  color: var(--bgc-color);
+.box-list-item:not(:last-child){
+  margin-bottom: 9px;
+}
+
+.box-contact {
+    color: var(--bgc-color);
   line-height: 1.71;
   text-decoration: none;
   font-style: normal;
 }
 
 .box-mail {
-  display: block;
-  margin-bottom: 9px;
-  color: var(--mail-color);
+   color: var(--mail-color);
   line-height: 1.71;
   text-decoration: none;
   font-style: normal;
@@ -397,13 +404,12 @@ address {
   cursor: pointer;
 }
 
-.card-list {
-  border-bottom: 1px solid var(--border-card-list);
+.card-container {
+  padding: 20px 24px;
+   border: 1px solid var(--border-card-list);
+   border-top: none;
 }
 
-.card-container {
-  margin: 20px 24px;
-}
 .card-title {
   margin-bottom: 4px;
 
